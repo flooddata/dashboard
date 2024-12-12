@@ -1,0 +1,105 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Data</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link href="{% static 'asset/css/headers.css' %}" rel="stylesheet" >
+    <link href="{% static 'asset/css/main.css' %}" rel="stylesheet" >
+    <!--Fontawasome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--Ajax-->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <style>
+      .circle {
+        width: 80px;            /* Width of the circle */
+        height: 80px;           /* Height of the circle */
+        color: black;            /* Text color */
+        font-size: 36px;         /* Font size for the number */
+        font-weight: bold;       /* Bold text */
+        display: flex;           /* Flexbox for centering */
+        justify-content: center; /* Center horizontally */
+        align-items: center;     /* Center vertically */
+        border-radius: 50%;      /* Make it circular */
+        margin:5px;
+        background-color: white;
+      }
+    </style>
+
+</head>
+<body>
+ 
+    
+<div>
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white" style="background: #EEEEEE; color:#000; width: 280px; height: 100vh; position: fixed; z-index: 1">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+      <span class="fs-4">Dashboard</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li style="background-color: white; margin: 5px">
+        <a  href="" class="nav-link" style="color:#000"><svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>Dashboard</a>
+      </li>
+      <li style="background-color: white; margin: 5px">
+        <a  href="" class="nav-link" style="color:#000"><svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>Tables</a>
+      </li>
+
+      <li style="background-color: white; margin: 5px">
+        <a  href="" class="nav-link" style="color:#000"><svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>Login</a>
+      </li>
+      <li style="background-color: white; margin: 5px">
+        <a  href="" class="nav-link" style="color:#000"><svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>Sign Up</a>
+      </li>
+    </ul>
+    <hr>
+    <li class="nav-item dropdown no-arrow osahan-right-navbar-user">
+      <a class="nav-link dropdown-toggle user-dropdown-link" href="" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <img id="profileImg" class="rounded-circle account-img" style="padding:5px" width="80" height="80" src=""> 
+      </a>
+    </li>
+  </div>
+  <div>
+    <header class="p-3 text-white fixed-top" style="background: #EEEEEE;">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <a href="" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+          </a>
+        
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="#" class="nav-link px-2" style="color: #000; font-weight: bold">Weather Station Data</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <div style="padding-left: 270px; padding-top: 60px;" class="my-4 mx-4">  
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 mt-5">
+          {% block content %}
+          {% endblock content %}
+        </div>
+        <div class="col-md-1"></div>
+      </div>   
+    </div>
+  </div>
+  
+</div>
+
+  {% block script %}
+  {% endblock script %}
+    
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
