@@ -4,11 +4,31 @@ from django.http.response import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import Recode
 from django.utils import timezone
+import plotly.express as px
+import plotly.io as pio
 
+
+def graph_view(request, x,y):
+    # Sample data
+    data = {'x': x, 'y': y}
+
+    fig = px.line(data, x='x', y='y', title='Simple Plotly Graph')
+
+    # Convert the figure to HTML
+    graph_html = pio.to_html(fig, full_html=False)
+    return graph_html
+    
+   # return render(request, 'graph_template.html', {'graph': graph_html})
+   
 
 def Home(request):
     # render the page
-    return render(request, 'index.html')
+    # send graph
+    graph_html = graph_view(request, [1, 2, 3], [4, 5, 6])
+    graph_html2 = graph_view(request, [1, 2, 3], [4, 5, 6])
+    graph_html3 = graph_view(request, [1, 2, 3], [4, 5, 6]) 
+    graph_html4 = graph_view(request, [1, 2, 3], [4, 5, 6])
+    return render(request, 'index.html', {'graph': graph_html, 'graph2': graph_html2, 'graph3': graph_html3, 'graph4': graph_html4})
 
 
 def getSensorData(request):
@@ -44,4 +64,5 @@ def receiveData(request):
         return HttpResponse('Weather data saved successfully')
     else:
         return HttpResponse('Invalid request method', status=405)
+
 

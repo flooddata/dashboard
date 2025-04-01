@@ -33,6 +33,15 @@
         margin:5px;
         background-color: white;
       }
+      .value {
+        padding: 5px;
+        color: black;            /* Text color */
+        font-size: 16px;         /* Font size for the number */
+        display: flex;           /* Flexbox for centering */
+        justify-content: center; /* Center horizontally */
+        align-items: center;     /* Center vertically */
+        margin:5px;
+      }
     </style>
 
 </head>
@@ -40,36 +49,32 @@
  
     
 <div>
-  <div class="d-flex flex-column flex-shrink-0 p-3 text-white" style="background: #EEEEEE; color:#000; width: 280px; height: 100vh; position: fixed; z-index: 1">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white" style="background: #1b8800; color:#000; width: 280px; height: 100vh; position: fixed; z-index: 1">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
       <span class="fs-4">Dashboard</span>
     </a>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
-      <li style="background-color: white; margin: 5px">
-        <a  href="" class="nav-link" style="color:#000"><svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>Dashboard</a>
+      <li style=" margin: 5px">
+        <a  href="" class="nav-link" style="color:#cfcfcf"><svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>Dashboard</a>
       </li>
-      <li style="background-color: white; margin: 5px">
-        <a  href="" class="nav-link" style="color:#000"><svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>Tables</a>
+      <li style="margin: 5px">
+        <a  href="" class="nav-link" style="color:#cfcfcf"><svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>Graph view</a>
       </li>
 
-      <li style="background-color: white; margin: 5px">
-        <a  href="" class="nav-link" style="color:#000"><svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>Login</a>
+      <li style="margin: 5px">
+        <a  href="" class="nav-link" style="color:#cfcfcf"><svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>Login</a>
       </li>
-      <li style="background-color: white; margin: 5px">
-        <a  href="" class="nav-link" style="color:#000"><svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>Sign Up</a>
+      <li style="margin: 5px">
+        <a  href="" class="nav-link" style="color:#cfcfcf"><svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>Sign Up</a>
       </li>
     </ul>
     <hr>
-    <li class="nav-item dropdown no-arrow osahan-right-navbar-user">
-      <a class="nav-link dropdown-toggle user-dropdown-link" href="" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <img id="profileImg" class="rounded-circle account-img" style="padding:5px" width="80" height="80" src=""> 
-      </a>
-    </li>
+    
   </div>
   <div>
-    <header class="p-3 text-white fixed-top" style="background: #EEEEEE;">
+    <header class="p-3 text-white fixed-top" style="background: #1b8800;">
       <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           <a href="" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
@@ -77,7 +82,7 @@
           </a>
         
           <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="#" class="nav-link px-2" style="color: #000; font-weight: bold">Weather Station Data</a></li>
+            <li><a href="#" class="nav-link px-2" style="color: #b4b4b4; font-weight: bold">Flood Data collection</a></li>
           </ul>
         </div>
       </div>
